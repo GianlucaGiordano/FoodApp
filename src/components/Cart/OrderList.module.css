@@ -1,0 +1,21 @@
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.price {
+  text-align: center;
+}
+
+.trash:hover {
+  cursor: pointer;
+}
+
+.amountContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
