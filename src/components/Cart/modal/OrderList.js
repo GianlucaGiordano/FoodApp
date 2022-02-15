@@ -1,6 +1,6 @@
 import styles from "./OrderList.module.css";
 import React from "react";
-import Button from "../UI/Button";
+import Button from "../../UI/Button";
 import trash from "./outline_delete_outline_black_24dp.png";
 
 const OrderList = (props) => {

@@ -1,0 +1,16 @@
+.formContainer {
+  max-width: 38rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 0.5rem;
+}
+
+.inputContainer input {
+  width: 15rem;
+}

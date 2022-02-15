@@ -1,8 +1,9 @@
 import React from "react";
 import OrderList from "./OrderList";
-import Button from "../UI/Button";
+import Button from "../../UI/Button";
 
 import styles from "./Modal.module.css";
+import OrderForm from "./OrderForm";
 
 const Modal = (props) => {
   const mapOrder = props.orderList.map((food) => {
@@ -28,6 +29,9 @@ const Modal = (props) => {
       />
       <div className={styles.modal}>
         {mapOrder}
+
+        <OrderForm orderList={props.orderList} />
+
         <div className={styles.buttonContainer}>
           <div>
             <Button
