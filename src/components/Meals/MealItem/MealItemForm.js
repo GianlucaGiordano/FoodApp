@@ -25,6 +25,7 @@ const MealItemForm = (props) => {
 
   useEffect(() => {
     props.orderList(newOrder);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newOrder]);
 
   return (

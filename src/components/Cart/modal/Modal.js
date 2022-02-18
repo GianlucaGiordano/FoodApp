@@ -39,6 +39,7 @@ const Modal = (props) => {
     setLoading(false);
     setOrderSent(true);
     props.onWipe();
+    return data;
   }
 
   return (

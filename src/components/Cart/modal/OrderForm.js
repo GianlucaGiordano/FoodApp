@@ -23,7 +23,7 @@ const OrderForm = (props) => {
       });
     }
   };
-  console.log(code.length);
+
   return (
     <form className={styles.formContainer} onSubmit={submitHandler}>
       <div className={styles.inputContainer}>
