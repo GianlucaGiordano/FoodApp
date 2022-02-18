@@ -18,7 +18,7 @@ const MealItemForm = (props) => {
         price: props.tutto.price,
         description: props.tutto.description,
       };
-
+      setAmount(1);
       return order;
     });
   };

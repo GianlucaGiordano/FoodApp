@@ -30,6 +30,11 @@
   margin-top: 2rem;
 }
 
+.showForm {
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media (min-width: 768px) {
   .modal {
     width: 40rem;
@@ -46,4 +51,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+button:hover,
+button:active {
+  background-color: #f23005 !important;
+  border-color: #f23005 !important;
 }

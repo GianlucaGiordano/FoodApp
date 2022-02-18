@@ -1,5 +1,5 @@
 import styles from "./Button.module.css";
-const button = (props) => {
+const Button = (props) => {
   return (
     <button
       className={styles.button}
@@ -12,4 +12,4 @@ const button = (props) => {
     </button>
   );
 };
-export default button;
+export default Button;

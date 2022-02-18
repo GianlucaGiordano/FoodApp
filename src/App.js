@@ -69,6 +69,10 @@ function App() {
     });
   };
 
+  const wipeFilteredOrderList = () => {
+    setOrderList([]);
+  };
+
   return (
     <>
       {showModal ? (
@@ -78,6 +82,7 @@ function App() {
           updateCounter={updateCounter}
           finalTotal={finalTotal}
           deleteOrder={deleteOrder}
+          onWipe={wipeFilteredOrderList}
         />
       ) : (
         ""

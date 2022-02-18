@@ -11,6 +11,6 @@
 
 .button button:hover,
 .button button:active {
-  background-color: #f23005;
-  border-color: #f23005;
+  background-color: #f23005 !important;
+  border-color: #f23005 !important;
 }
