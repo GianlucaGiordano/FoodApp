@@ -5,24 +5,35 @@ import { useState, useEffect } from "react";
 
 const AvailableMeals = (props) => {
   const [foodList, setFoodlist] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchFoodHandler = async () => {
-      const response = await fetch(
-        "https://food-app-10c79-default-rtdb.europe-west1.firebasedatabase.app/meals.json"
-      );
-      const data = await response.json();
+      try {
+        const response = await fetch(
+          "https://food-app-10c79-default-rtdb.europe-west1.firebasedatabase.app/meals.json"
+        );
 
-      const foodsData = [];
-      for (const item in data) {
-        foodsData.push({
-          id: item,
-          name: data[item].name,
-          description: data[item].description,
-          price: data[item].price,
-        });
+        if (!response.ok) {
+          throw new Error("something went wrong");
+        }
+        const data = await response.json();
+        if (data === null) {
+          throw new Error("something went wrong");
+        }
+        const foodsData = [];
+        for (const item in data) {
+          foodsData.push({
+            id: item,
+            name: data[item].name,
+            description: data[item].description,
+            price: data[item].price,
+          });
+        }
+        setFoodlist(foodsData);
+      } catch (error) {
+        setError(error.message);
       }
-      setFoodlist(foodsData);
     };
     fetchFoodHandler();
   }, []);
@@ -41,9 +52,7 @@ const AvailableMeals = (props) => {
 
   return (
     <section className={classes.meals}>
-      <Card>
-        <ul>{mapDummy}</ul>
-      </Card>
+      <Card>{error ? <p>{error}</p> : <ul>{mapDummy}</ul>}</Card>
     </section>
   );
 };
