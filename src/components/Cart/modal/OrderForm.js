@@ -65,7 +65,7 @@ const OrderForm = (props) => {
       <div className={styles.inputContainer}>
         <label htmlFor="code">Postal Code</label>
         <input
-          type="text "
+          type="text"
           id="code"
           minLength="5"
           required
@@ -78,7 +78,12 @@ const OrderForm = (props) => {
       </div>
 
       <div style={{ paddingTop: "2rem" }}>
-        <Button style={{ marginRight: "2rem" }}>Cancel</Button>
+        <Button
+          style={{ marginRight: "2rem" }}
+          onClick={() => props.closeModal(false)}
+        >
+          Cancel
+        </Button>
         <Button type="submit">Invia</Button>
       </div>
     </form>

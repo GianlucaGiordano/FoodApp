@@ -31,7 +31,7 @@ const Modal = (props) => {
       "https://food-app-10c79-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
       {
         method: "POST",
-        body: JSON.stringify({ ...props.orderList, ...{ userInfo } }),
+        body: JSON.stringify({ orderlist: props.orderList, ...{ userInfo } }),
         headers: { "Content-type": "application/json" },
       }
     );
@@ -80,7 +80,9 @@ const Modal = (props) => {
                 <h2>Total: {props.finalTotal.toFixed(2)}</h2>
               </div>
             </div>
-            {showForm && <OrderForm onFetch={addOrder} />}
+            {showForm && (
+              <OrderForm onFetch={addOrder} closeModal={props.closeModal} />
+            )}
           </>
         )}
       </div>

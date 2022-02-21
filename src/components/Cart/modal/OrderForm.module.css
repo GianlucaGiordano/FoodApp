@@ -11,6 +11,11 @@
   margin-top: 0.5rem;
 }
 
+.inputContainer label {
+  padding-bottom: 0.5rem;
+}
+
 .inputContainer input {
   width: 15rem;
+  border-radius: 10px;
 }
